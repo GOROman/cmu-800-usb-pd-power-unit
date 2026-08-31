@@ -1,0 +1,23 @@
+Designator,Qty,Value,Package,Preferred LCSC,Status,Notes
+J1,1,USB-C receptacle sink,USB_C_16P_SMD,C393939,provisional,Confirm connector mechanical dimensions
+F1,1,1206L110 30 V resettable fuse,1206,C49318383,provisional,Confirm hold/trip current and USB-PD inrush behavior
+D1,1,SMBJ24A TVS,SMBJ,C41425647,provisional,Coarse VBUS clamp; not a mains surge protector
+D2 D3,2,ESDA25W CC protection,SOD-323,C1974707,provisional,Confirm exact ESDA25W pinout/package before PCB
+U1,1,STUSB4500QTR,QFN-24-EP 4x4,C2678061,preferred,Program fixed 20 V PDO in NVM
+Q1,1,AO3401A P-channel MOSFET,SOT-23,C15127,preferred,VBUS_EN_SNK controlled high-side switch
+U2,1,WRB2405S-3WR2 isolated 5 V,SIP-7 22x9.5,C5369677,preferred,24 V nominal; 18 V minimum; 3 W
+U3,1,WRA2415S-3WR2 isolated +/-15 V,SIP-7 22x9.5,C5369663,preferred,24 V nominal; 18 V minimum; 3 W; 1500 VDC isolation
+R1,1,100 kOhm,R_0603,C25803,preferred,PMOS gate pull-up
+R2,1,1 kOhm,R_0603,TBD,select,STUSB4500 DISCH to VBUS_SW
+R6,1,100 kOhm reset pulldown,R_0603,C25803,preferred,RESET is active high; weakly held low for autonomous operation
+R7 R8,2,4.7 kOhm I2C pull-up,R_0603,C23162,preferred,SCL/SDA to VREG_2V7 for J4 programming access
+R3,1,160 Ohm >=0.5 W,R_1210,TBD,select,WRB minimum-load bleed
+R4 R5,2,3.0 kOhm >=0.5 W,R_1210,TBD,select,WRA positive/negative minimum-load bleeds
+C1,1,4.7 uF 50 V,C_D4_L5.4,C5246584,preferred,VBUS_RAW local bulk
+C2 C6 C8 C10,4,100 nF 50 V,C_0805,C38141,preferred,HF bypass; C6/C8/C10 are output bypasses
+C3 C4,2,1.0 uF VREG,C_0603,TBD,select,STUSB4500 VREG_1V2/VREG_2V7 decoupling
+C5 C7 C9,3,100 uF 25 V,C_D6.3,C4747965,provisional,One on each isolated output rail; verify polarity/ripple rating
+C11,1,10 uF 50 V,C_1206,TBD,select,DC/DC input bulk on VBUS_SW
+C12,1,1.0 uF 50 V,C_0805,TBD,select,DC/DC input HF bypass on VBUS_SW
+J2 J3,2,CN1/CN3 compatible 5-pin output,HDR-1x05_2.54mm,TBD,mechanical-select,Must match original CMU-800 harness and keying
+J4,1,STUSB4500 I2C/NVM programming header,HDR-1x05_2.54mm,TBD,optional,Pin 1 VDD; 2 PD_GND; 3 SCL; 4 SDA; 5 RESET
